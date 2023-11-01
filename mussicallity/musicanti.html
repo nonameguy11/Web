@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Musicallity</title>
+</head>
+
+<body>
+<font face = "sans-serif" size = "5">
+ <nav>
+    <font face = "monospace" size = "20">
+      <p align="center">
+        <a href="music_site.html"><img src="logo2.png" width="120" align = "left"></a>
+        <a href="alboms.html">Альбомы</a>
+        <a href="musicanti.html">Исполнители</a>
+        <a href="news.html">Новинки</a>
+      </p>
+    </font>
+  </nav>
+<font color = "white"><h3>.</h3></font>
+
+<details>
+  <summary>График</summary>
+  <table cellpadding="20" cellspacing="2">
+    <tr>
+      <form>
+        <td align="left" valign="0">Значение по оси OX<br>
+        <font face="serif" size = "4"><input  type="radio"  name="graph" value="age"> Возраст <br>
+        <input  type="radio"  name="graph" value="country"> Страна <br>
+        <input  type="radio"  name="graph" value="city"> Город<br>
+        <input type="button" value="Построить"></font>
+        </td>
+      </form>
+
+      <form>
+        <td align="left" valign="0">Результат<br>
+        <font face="serif" size = "4"><input type="checkbox" name="result" value="max_list">Наибольшее количество прослушиваний<br>
+        <input type="checkbox" name="result" value="min_list">Наименьшее количество прослушиваний<br>
+        <input type="checkbox" name="result" value="max_fans">Наибольшее количество слушателей в месяц<br>
+        <input type="checkbox" name="result" value="min_fans">Наименьшее количество слушателей в месяц<br>
+        <input type="checkbox" name="result" value="atrists" >Количество исполнителей</font>
+        </td>
+      </form>
+    </tr>
+  </table>
+  <font face="serif" size = "4"><p>Здесь будет график</p></font>
+</details>
+
+
+<details>
+<summary>Фильтр</summary>
+<font face="serif" size = "4">
+<form>
+  Псевдоним: <input type="text" name="name">
+</form>
+
+<form>
+  Страна: <input type="text" name="country">
+</form>
+
+<form>
+  Город: <input type="text" name="city" >
+</form>
+
+<form>
+  Возраст: <input type="text" name="age">
+</form>
+
+<form>
+  Количество прослушиваний: от <input type="text" name="min_pros"> до <input type="text" name="max_pros">
+</form>
+
+<form>
+  Количество слушателей в месяц: от <input type="text" name="min_fans"> до <input type="text" name="max_fans">
+</form>
+
+<form>
+   <input type="button" value="Найти">
+</form>
+</font>
+</details>
+
+
+<details>
+<summary>Сортировка</summary>
+<font face="serif" size = "4">
+ <p>
+    <label>
+        Первый уровень:
+            <select id="level1">
+                <option value = "No">Нет</option>
+                <option value = "Yes">Да</option>
+            </select>
+            по убыванию?
+            <input type="checkbox" name="ubyv" value="yes" >
+      </label>
+  </p>
+
+   <p>
+    <label>
+        Второй уровень:
+            <select id="level2">
+                <option value = "No">Нет</option>
+                <option value = "Yes">Да</option>
+            </select>
+            по убыванию?
+            <input type="checkbox" name="ubyv" value="yes" >
+      </label>
+  </p>
+
+   <p>
+    <label>
+        Третий уровень:
+            <select id="level3">
+                <option value = "No">Нет</option>
+                <option value = "Yes">Да</option>
+            </select>
+            по убыванию?
+            <input type="checkbox" name="ubyv" value="yes" >
+      </label>
+  </p>
+  <p>
+  <form>
+   <input type="button" value="Сортировать">
+</form>
+</p>
+</font>
+</details>
+
+
+<table border = "1" align = "center" cellpadding="10" cellspacing="2">
+  <tr>
+    <th>Псевдоним</th>
+    <th>Страна</th>
+    <th>Родной город</th>
+    <th>Возраст</th>
+    <th>Количество прослушиваний</th>
+    <th>Количество слушателей в месяц</th>
+  </tr>
+
+  <tr>
+    <th><img src = "jizi.jpg" width = "100" align="left"> <p>Джизус</p></th>
+    <th>Россия</th>
+    <th>Киров</th>
+    <th>26</th>
+    <th>265.864.000</th>
+    <th>766.020</th>
+  </tr>
+
+  <tr>
+    <th><img src = "ft.jpeg" width = "100" align="middle"> Friendly Thug 52 NGG</th>
+    <th>Россия</th>
+    <th>Санкт-Петербург</th>
+    <th>23</th>
+    <th>78.364.130</th>
+    <th>857.771</th>
+  </tr>
+
+  <tr>
+    <th><img src = "drakeself.jpg" width = "100" align="left"> <p>Drake</p></th>
+    <th>Канада</th>
+    <th>Торонто</th>
+    <th>36</th>
+    <th>75.186.501.142</th>
+    <th>105.941.627</th>
+  </tr>
+
+  <tr>
+    <th><img src = "asap.jpg" width = "100" height = "100" align="left"> <p>ASAP Rocky</p></th>
+    <th>США</th>
+    <th>Нью-Йорк</th>
+    <th>35</th>
+    <th>11.569.121.874</th>
+    <th>43.551.567</th>
+  </tr>
+
+  <tr>
+    <th><img src = "kp.jpg" width = "100" height = "100" align="left"> <p>Katy Perry</p></th>
+    <th>США</th>
+    <th>Санта-Барбара</th>
+    <th>38</th>
+    <th>46.319.431.142</th>
+    <th>85.421.551</th>
+  </tr>
+
+  <tr>
+    <th><img src = "morgenface.jpg" width = "100" height = "100" align="left"> <p>Morgenstern</p></th>
+    <th>Россия</th>
+    <th>Уфа</th>
+    <th>25</th>
+    <th>3.432.763.521</th>
+    <th>5.156.517</th>
+  </tr>
+
+  <tr>
+    <th><img src = "bbt.jpeg" width = "100" height = "100" align="left"> <p>Big Baby Tape</p></th>
+    <th>Россия</th>
+    <th>Москва</th>
+    <th>23</th>
+    <th>784.410.000 </th>
+    <th>2.756.517</th>
+  </tr>
+
+  <tr>
+    <th><img src = "cursed.png" width = "100" height = "100" align="left"> <p>zxcursed</p></th>
+    <th>Украина</th>
+    <th>Киев</th>
+    <th>16</th>
+    <th>154.214.213 </th>
+    <th>2.316.413</th>
+  </tr>
+
+  <tr>
+    <th><img src = "kizaru.jpg" width = "100" height = "100" align="left"> <p>Kizaru</p></th>
+    <th>Россия</th>
+    <th>Санкт-Петербург</th>
+    <th>34</th>
+    <th>1.634.356.652 </th>
+    <th>2.104.213</th>
+  </tr>
+
+   <tr>
+    <th><img src = "jayz.jpg" width = "100" height = "100" align="left"> <p>Jay-Z</p></th>
+    <th>США</th>
+    <th>Нью-Йорк</th>
+    <th>53</th>
+    <th>12.421.341.352 </th>
+    <th>142.304.313</th>
+  </tr>
+
+</table>
+
+</body>
