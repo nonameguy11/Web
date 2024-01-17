@@ -1,0 +1,17 @@
+extends template 
+block variables 
+  - var title = 'Альбомы'
+  - var bgpic = "img/wp_heroes.jpg"
+  - var listHeroes = [{'name': 'Mayot - GhettoGarden', 'image': 'gg4.jpg'},{'name': 'Lil peep - Hellboy', 'image': 'peep1.jpg'},{'name': 'Джизус - Психоневрологический центр', 'image': 'jizus.jpeg'},{'name': 'S$luki - WildEast', 'image': 'saluki.jpg'},{'name': 'LSP - Tragic City', 'image': 'lsp.jpg'},{'name': 'XXXtentacion - ?', 'image': 'sad.jpg'},{'name': 'Big Baby Tape - M11 ', 'image': 'bbt.jpg'},{'name': 'AlBlack52 - Long live', 'image': 'alblack.jpeg'},{'name': 'ASAP Rocky - Long Live ASAP', 'image': 'asap.png'},{'name': 'mad1kid - Он сказал поехали', 'image': 'madkid.jpeg'},{'name': 'zxcursed - Haunt', 'image': 'jizus.jpeg'},{'name': 'Молодой Платон - Нефор', 'image': 'nefor.jpg'},{'name': 'zhanulka - Портреты ', 'image': 'zhan.jpeg'},{'name': 'Две тысячи ярдов - Верните в моду любовь', 'image': 'luv.jpeg'},{'name': 'Brennan Savage - Tell me why', 'image': 'bra.jpeg'},{'name': 'mad1kid - Барыга', 'image': 'bar.png'},{'name': 'ooes - Слизывай', 'image': 'ooes.jpeg'},{'name': 'Папин Олимпос - Официантка', 'image': 'papa.jpeg'},{'name': 'Джизус - Господин никто', 'image': 'nikto.png'},{'name': 'Баста - На заре', 'image': 'basta.jpg'},{'name': 'Рэйчи - Виолетта', 'image': 'violjpg.jpg'},{'name': 'Lil peep - Cry now, love later', 'image': 'cry.jpg'},{'name': 'Скриптонит - Дом с нормальными явлениями', 'image': 'skrip.jpg'},{'name': 'Lil Krystall - NO LABEL', 'image': 'kris.jpg'},]
+
+mixin createHero(item)
+    img.bigpic(src= "img/" + item.image, title=item.name, hspace="10")
+
+
+block content
+  div.about-alboms
+    div.about-header
+      | Популярные альбомы
+  p.about-center
+    each item in listHeroes
+      +createHero(item)

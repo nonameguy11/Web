@@ -1,0 +1,252 @@
+<!DOCTYPE html >
+<html lang="ru">
+  <head> 
+    <meta charset="utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="css/main.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css"/>
+  </head>
+  <body>
+    <div class="header">
+      <div class="header_title">
+        <h3>Musicallity</h3>
+      </div>
+      <div class="menu">
+            <div class="item"> <a href="index.html">Новинки</a></div>
+            <div class="item"> <a href="alboms.html">Альбомы</a></div>
+            <div class="item"> <a href="ispolniteli.html">Исполнители</a></div>
+      </div>
+    </div>
+    <p>
+      <details>
+        <summary>Построение графика</summary>
+        <form>
+          <p>Значение по оси OX:<br/>
+            <label>
+              <input class="input" type="radio" name="graph" value="attribute"/>Псевдоним
+            </label><br/>
+            <label>
+              <input class="input" type="radio" name="graph" value="pros"/>Количество прослушиваний
+            </label><br/>
+            <label>
+              <input class="input" type="radio" name="graph" value="mes"/>Количество новых слушателей в месяц
+            </label>
+          </p>
+          <p>Результат: <br/>
+            <label>
+              <input class="input" type="checkbox" name="graph" value="country"/>Страна
+            </label><br/>
+            <label>
+              <input class="input" type="checkbox" name="graph" value="city"/>Город
+            </label><br/>
+            <label>
+              <input class="input" type="checkbox" name="graph" value="age"/>Возраст
+            </label>
+          </p><br/>
+          <p> 
+            <input class="btn" type="button" value="Сортировать"/>
+            <input class="btn" type="reset" value="Сбросить настройки"/>
+          </p>
+        </form>
+      </details>
+    </p>
+    <p>
+      <details> 
+        <summary>Фильтр</summary>
+        <form>
+          <p> 
+            <label>Псевдоним:
+              <input class="input" type="text"/><br/>
+            </label>
+            <label>Страна:
+              <input class="input" type="text"/><br/>
+            </label>
+            <label>
+              Возраст:От
+              <input class="input" type="text"/>До
+              <input class="input" type="text"/><br/>
+            </label>
+            <label>
+              Количество прослушиваний:От
+              <input class="input" type="text"/>До
+              <input class="input" type="text"/><br/>
+            </label>
+            <label>
+              Количество слушателей в месяц:От
+              <input class="input" type="text"/>До
+              <input class="input" type="text"/><br/>
+            </label>
+          </p>
+          <p>
+            <input class="btn" type="button" value="Сортировать"/>
+            <input class="btn" type="reset" value="Сбросить настройки"/>
+          </p>
+        </form>
+      </details>
+    </p>
+    <p>
+      <details>
+        <summary>Сортировка</summary>
+        <form>
+          <p>Первый уровень:
+            <select>
+              <option>Фото</option>
+              <option>Псевдоним</option>
+              <option>Страна</option>
+              <option>Город</option>
+              <option>Возраст</option>
+              <option>Количество прослушиваний</option>
+              <option>Количество слушателей в месяц</option>
+            </select>
+            <select>
+              <option>По возрастанию</option>
+              <option>По убыванию</option>
+            </select>
+          </p>
+          <p>Второй уровень:
+            <select>
+              <option>Фото</option>
+              <option>Псевдоним</option>
+              <option>Страна</option>
+              <option>Город</option>
+              <option>Возраст</option>
+              <option>Количество прослушиваний</option>
+              <option>Количество слушателей в месяц</option>
+            </select>
+            <select>
+              <option>По возрастанию</option>
+              <option>По убыванию</option>
+            </select>
+          </p>
+          <p>Третий уровень:
+            <select>
+              <option>Фото</option>
+              <option>Псевдоним</option>
+              <option>Страна</option>
+              <option>Город</option>
+              <option>Возраст</option>
+              <option>Количество прослушиваний</option>
+              <option>Количество слушателей в месяц</option>
+            </select>
+            <select>
+              <option>По возрастанию</option>
+              <option>По убыванию</option>
+            </select>
+          </p>
+          <p> 
+            <input class="btn" type="button" value="Сортировать"/>
+            <input class="btn" type="reset" value="Сбросить настройки"/>
+          </p>
+        </form>
+      </details>
+    </p>
+    <table class="table" border="2">
+      <tr>
+        <th>Фото</th>
+        <th>Псевдоним</th>
+        <th>Страна</th>
+        <th>Город</th>
+        <th>Возраст</th>
+        <th>Количество прослушиваний</th>
+        <th>Количество слушателей в месяц</th>
+      </tr>
+      <tr>
+        <td><img src="img/jizi.jpg" alt="Джизус"/></td>
+        <td>Джизус</td>
+        <td>Россия</td>
+        <td>Киров</td>
+        <td>26</td>
+        <td>265.864.000</td>
+        <td>766.020</td>
+      </tr>
+      <tr>
+        <td><img src="img/drakeself.jpg" alt="Drake"/></td>
+        <td>Drake</td>
+        <td>Канада</td>
+        <td>Торонто</td>
+        <td>36</td>
+        <td>75.186.501.142</td>
+        <td>105.941.627</td>
+      </tr>
+      <tr>
+        <td><img src="img/ft.jpeg" alt="Friendly Thug 52 NGG"/></td>
+        <td>Friendly Thug 52 NGG</td>
+        <td>Россия</td>
+        <td>Санкт-Петербург</td>
+        <td>23</td>
+        <td>78.364.130</td>
+        <td>857.771</td>
+      </tr>
+      <tr>
+        <td><img src="img/asap.jpg" alt="ASAP Rocky"/></td>
+        <td>ASAP Rocky</td>
+        <td>США</td>
+        <td>Нью-Йорк</td>
+        <td>35</td>
+        <td>11.569.121.874</td>
+        <td>43.551.567</td>
+      </tr>
+      <tr>
+        <td><img src="img/kp.jpg" alt="Katy Perry"/></td>
+        <td>Katy Perry</td>
+        <td>США</td>
+        <td>Санта-Барбара</td>
+        <td>38</td>
+        <td>46.319.431.142</td>
+        <td>85.421.551</td>
+      </tr>
+      <tr>
+        <td><img src="img/morgenface.jpg" alt="Morgenstern"/></td>
+        <td>Morgenstern</td>
+        <td>Россия</td>
+        <td>Уфа</td>
+        <td>25</td>
+        <td>3.432.763.521</td>
+        <td>5.156.517</td>
+      </tr>
+      <tr>
+        <td><img src="img/bbt.jpeg" alt="Big Baby Tape"/></td>
+        <td>Big Baby Tape</td>
+        <td>Россия</td>
+        <td>Москва</td>
+        <td>23</td>
+        <td>784.410.000</td>
+        <td>2.756.517</td>
+      </tr>
+      <tr>
+        <td><img src="img/cursed.png" alt="zxcursed"/></td>
+        <td>zxcursed</td>
+        <td>Украина</td>
+        <td>Киев</td>
+        <td>17</td>
+        <td>154.214.213</td>
+        <td>2.316.413</td>
+      </tr>
+      <tr>
+        <td><img src="img/kizaru.jpg" alt="Kizaru"/></td>
+        <td>Kizaru</td>
+        <td>Россия</td>
+        <td>Санкт-Петербург</td>
+        <td>34</td>
+        <td>1.634.356.652</td>
+        <td>2.104.213</td>
+      </tr>
+      <tr>
+        <td><img src="img/jayz.jpg" alt="Jay-Z"/></td>
+        <td>Jay-Z</td>
+        <td>США</td>
+        <td>Нью-Йорк</td>
+        <td>53</td>
+        <td>12.421.341.352</td>
+        <td>142.304.313</td>
+      </tr>
+    </table>
+    <footer> 
+      <div class="footer">
+        <div class="footer_left">© Шешеня Е.О., Б9121-09.03.04, 2023-2024</div>
+        <div class="footer_right">Контакты</div>
+      </div>
+    </footer>
+  </body>
+</html>

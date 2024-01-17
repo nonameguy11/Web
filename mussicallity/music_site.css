@@ -1,0 +1,161 @@
+.poisk{
+
+	background: grey;
+	height: 40px;
+}
+.nav_text{
+
+	display: inline-block;
+	width: 50%;
+	vertical-align: middle;
+	margin-bottom: 10px;
+	margin-left: 5px;
+}
+.nav_bar{
+
+	background: url("wallpaper.jpg") 100%;
+	width: 100%;
+	height: 200px;
+	margin: auto;
+	text-align: center;
+	font-size: 2.5vw;
+}
+.menu_pages{
+
+	display: inline-block;
+	margin: auto;
+	background-color: lightgrey;
+	margin-top: 1%;
+
+}
+.pages{
+
+	display: inline-block;
+	margin: auto;
+	margin: 20px;
+	text-decoration: none;
+	color: white;
+	
+}
+#special{
+	background-color:grey;
+}
+
+.left{
+	display: inline-block;
+	/*background: red;*/
+	width: 65%;
+	text-align: center;
+	padding-top: 2%;
+
+
+}
+
+.mini_left{
+	font-size: 15%;
+	/*margin-top: 2%;*/
+
+
+
+}
+
+.right{
+	padding-top: 2%;
+	display: inline-block;
+	/*background: green;*/
+	width: 29%;
+	text-align: center;
+	/*vertical-align: top;*/
+
+
+}
+
+.mini_right{
+	font-size: 15%;	
+	vertical-align: middle;
+	text-align: left;
+	padding-left: 2%;
+/*margin-top: 2%;
+padding-bottom: 2% ;*/
+
+
+/*text-align: center;*/
+
+}
+
+.mini_right > a{
+
+	display: inline-block;
+}
+
+
+
+.top{
+
+	display: inline-block;
+	/*position: absolute;*/
+	font-size: 5%;
+	
+}
+
+.mini_text{
+	height: 10%;
+	text-align: center;
+	font-size: 15%;
+}
+
+.mini_left > p{
+	font-size: 15%;
+
+}
+
+p{
+	font-size: 100%;
+}
+
+.contact>p{
+
+	font-size: 16px;
+}
+
+.contact > p > span > img{
+
+	margin-right: 3px;
+	height: 15px;
+}
+
+.contact > p > span > a{
+
+	text-decoration: none;
+	color: black;
+		}
+
+span{
+	float: right;
+}
+
+.mini_left > a > img{
+
+	width: 100%;
+	height: 150px;
+}
+
+
+
+.mini_right > a > img{
+	width: 100%;
+	height: 150px;
+
+}
+.top_text{
+	display: inline-block;
+	position: absolute;
+	vertical-align: top;
+	font-size: 1.2vw;
+}
+.right_text{
+	font-size: 1vw;
+}
+.left_text{
+	font-size: 1vw;
+}
