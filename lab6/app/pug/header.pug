@@ -1,22 +1,22 @@
--       
-    var dictMenu = {
-        'Новинки':'index.html',
-        'Альбомы':'alboms.html',
-        'Исполнители':'ispolniteli.html'
-    }
-    //- var active_menu = 'Новинки'
-    var titleText = 'Musicallity'   
-mixin createMenu(menu)
-    each value, key in dictMenu
-        if active == key
-           .item-a
-            a(href= value)= key 
-        else
-            .item 
-                a(href= value)= key
-block header
-.header
-  .header_title
-    h3= titleText
-  .menu
-    +createMenu(dictMenu)
+//- block variables       
+//-     - var dictMenu = {
+//-         'Новинки':'index.html',
+//-         'Альбомы':'alboms.html',
+//-         'Исполнители':'ispolniteli.html'
+//-     }
+//-     - var active_menu = 'index.html'
+//-     - var titleText = 'Musicallity'   
+//- mixin createMenu(menu,active)
+//-     each value, key in dictMenu
+//-         if active == value
+//-            .item-a
+//-             a(href= value)= key
+//-         else
+//-             .item 
+//-                 a(href= value)= key
+//- block header
+//- .header
+//-   .header_title
+//-     h3= titleText
+//-   .menu
+//-     //- //+createMenu(dictMenu,active_menu)

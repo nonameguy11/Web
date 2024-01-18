@@ -215,7 +215,7 @@ body {
   align-content: center;
 }
 @media (max-width: 1024px) {
-  .sub_img {
+  .sub-img {
     width: 100%;
     margin-top: 2px;
     display: flex;
@@ -224,10 +224,10 @@ body {
     align-content: center;
     align-items: center;
   }
-  .sub_img img {
+  .sub-img img {
     display: block;
     min-width: 100px;
-    max-width: 50%;
+    max-width: 80%;
     flex-grow: 1;
   }
   .logo_block {

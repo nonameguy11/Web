@@ -40,17 +40,18 @@ html
         img(src="img/"+key, alt="")
         p=value
 
+
+mixin finalBlock(imgSrc)
   .final_block_left
-    .final_block_content
-      .final_block_content_title=block_left_title
-      .final_block_content_text=block_left_content		
-
-  .final_block
-    img(src="img/sad.jpg", alt="")
-    .final_block_content
-      .final_block_content_title=block_title
-      .final_block_content_text=block_content
-
+    .final_block_content_title= block_left_title
+    .final_block_content_text= block_left_content
+  .final_block  
+    if imgSrc
+      img(src=imgSrc, alt="")
+      .final_block_content
+        .final_block_content_title= block_title
+        .final_block_content_text= block_content
++finalBlock("img/sad.jpg")
   include footer
 
 //- .logo_block

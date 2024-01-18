@@ -1,15 +1,82 @@
+//- var dictMenu = {
+//-     'Новинки': 'index.html',
+//-     'Альбомы': 'alboms.html',
+//-     'Исполнители': 'ispolniteli.html'
+//- }
+
+- var alboms = "alboms.html"
+- var index = "index.html"
+- var ispolniteli = "ispolniteli.html"
+- var titleText = 'Musicallity'  
+- var menuItems = {"Новинки": index, "Альбомы": alboms, 'Исполнители': ispolniteli}
+- var active_menu = index
+
+mixin createMenu(items,active)
+  each url, title in items
+    if active == url
+      .item-a
+        a.active(href=url)= title
+    else 
+      .item 
+        a(href=url)= title
+
 block variables 
 doctype html 
 html(lang="ru")
   head 
     meta(charset="utf-8")
-    title
-    link(rel="stylesheet" href = "css/main.css")
+    link(rel="stylesheet" href="css/main.css")
     meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
     link(rel="stylesheet", href="css/bootstrap-reboot.min.css")
   body
     block header 
-      include header.pug 
+      .header
+        .header_title
+          h3= titleText  
+        .menu
+          +createMenu(menuItems,active_menu)  
     block content 
     footer 
-      include footer.pug
+      include footer.pug  
+
+
+
+//- - var alboms= "alboms.html"
+//- - var index= "index.html"
+//- - var ispolniteli= "ispolniteli.html"
+//- - var menu = {"Новинки": index, "Альбомы": alboms, 'Исполнители': ispolniteli}
+
+//- //- mixin create_menu(items)
+//- //-   each url in items
+//- //-     if active == url
+//- //-       a.active(href=url)= title
+//- //-     else 
+//- //-       a(href=url)= title
+//- mixin createMenu(menu)
+//-   each value, key in dictMenu
+//-     if active == value
+//-       .item-a
+//-           a(href= value)= key
+//-         else
+//-           .item 
+//-              a(href= value)= key
+//- block variables 
+//- doctype html 
+//- html(lang="ru")
+//-   head 
+//-     meta(charset="utf-8")
+//-     title
+//-     link(rel="stylesheet" href = "css/main.css")
+//-     meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+//-     link(rel="stylesheet", href="css/bootstrap-reboot.min.css")
+//-   body
+//-     block header 
+//-       //- include header.pug
+//-       .header
+//-         .header_title
+//-           h3= titleText
+//-         .menu
+//-           +create_menu(menu) 
+//-     block content 
+//-     footer 
+//-       include footer.pug
