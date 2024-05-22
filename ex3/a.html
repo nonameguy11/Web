@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+<script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+<table>
+  <thead>
+    <tr>
+      <th>Браузеры</th>
+      <th>Доля рынка (%)</th>
+    </tr>
+  </thead>
+  <tbody id="tableBody">
+    <tr>
+      <td>Chrome</td>
+      <td>64.63</td>
+    </tr>
+    <tr>
+      <td>Safari</td>
+      <td>18.97</td>
+    </tr>
+    <tr>
+      <td>Edge</td>
+      <td>4.41</td>
+    </tr>
+    <tr>
+      <td>Firefox</td>
+      <td>3.58</td>
+    </tr>
+    <tr>
+      <td>Opera</td>
+      <td>1.62</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<input type="text" id="searchInput" placeholder="Введите поисковый запрос">
+<script>
+  const table = d3.select('table');
+const searchInput = d3.select('#searchInput');
+const rows = table.selectAll('tbody tr');
+const data = rows.data().map(row => {
+    return {
+        browser: row.cells[0].textContent,
+        marketShare: row.cells[1].textContent
+    };
+});
+function filterData(searchTerm) {
+    const filteredData = data.filter(row => {
+        return row.browser.toLowerCase().includes(searchTerm.toLowerCase()) ||
+               row.marketShare.toLowerCase().includes(searchTerm.toLowerCase());
+    });
+    return filteredData;
+}
+searchInput.on('input', function() {
+    const searchTerm = this.value;
+    const filteredData = filterData(searchTerm);
+    updateTable(filteredData);
+});
+function updateTable(data) {
+    const tbody = table.select('tbody');
+    tbody.selectAll('tr').remove(); // Clear existing rows
+
+    const rows = tbody.selectAll('tr')
+        .data(data)
+        .enter()
+        .append('tr');
+
+    rows.append('td')
+        .text(d => d.browser);
+
+    rows.append('td')
+        .text(d => d.marketShare);
+}
+updateTable(data); // Initial display of all data
+
+  
+</script>
+</body>
+</html>

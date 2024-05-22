@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Musicallity</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+<font face = "sans-serif" size = "5">
+ <nav>
+    <font face = "monospace" size = "20">
+      <p align="center">
+        <a href="music_site.html"><img src="logo2.png" width="120" align = "left"></a>
+        <a href="alboms.html">Альбомы</a>
+        <a href="musicanti.html">Исполнители</a>
+        <a href="news.html">Новинки</a>
+      </p>
+    </font>
+  </nav>
+<font color = "white"><h3>.</h3></font>
+
+<details>
+  <summary>График</summary>
+  <table cellpadding="20" cellspacing="2">
+    <tr>
+      <form>
+        <td align="left" valign="0">Значение по оси OX<br>
+        <font face="serif" size = "4"><input  type="radio"  name="graph" value="age"> Возраст <br>
+        <input  type="radio"  name="graph" value="country"> Страна <br>
+        <input  type="radio"  name="graph" value="city"> Город<br>
+        <input type="button" value="Построить"></font>
+        </td>
+      </form>
+
+      <form>
+        <td align="left" valign="0">Результат<br>
+        <font face="serif" size = "4"><input type="checkbox" name="result" value="max_list">Наибольшее количество прослушиваний<br>
+        <input type="checkbox" name="result" value="min_list">Наименьшее количество прослушиваний<br>
+        <input type="checkbox" name="result" value="max_fans">Наибольшее количество слушателей в месяц<br>
+        <input type="checkbox" name="result" value="min_fans">Наименьшее количество слушателей в месяц<br>
+        <input type="checkbox" name="result" value="atrists" >Количество исполнителей</font>
+        </td>
+      </form>
+    </tr>
+  </table>
+  <font face="serif" size = "4"><p>Здесь будет график</p></font>
+</details>
+
+
+<p>
+  <details>
+    <summary>Сортировка</summary>
+    <form id="sort">
+      <p>Первый уровень:
+          <select id="fieldsFirst"></select>
+          по убыванию? <input type="checkbox" id="fieldsFirstDesc">
+      </p>
+      <p>Второй уровень:
+          <select id="fieldsSecond"></select>
+          по убыванию? <input type="checkbox" id="fieldsSecondDesc">
+      </p>
+      <p>Третий уровень:
+          <select id="fieldsThird"></select>
+          по убыванию? <input type="checkbox" id="fieldsThirdDesc">
+      </p>
+      <p>
+          <input type="button" value="Сортировать" id="sortbutton">
+          <input type="reset" value="Сбросить настройки" id="resetsort">
+      </p>
+  </form>
+  </details>
+</p>
+
+
+<p>
+  <details>
+    <summary>Фильтр</summary>
+    <form id="filter">
+      <p>
+        <label for="name">Псевдоним:</label> 
+          <input type="text" id="name"><br>
+      </p>
+      <p>
+        <label for="country">Страна:</label>
+          <input type="text" id="country"><br>
+      </p>
+      <p>
+        <label for="city">Родной город:</label> 
+        <input type="text" id="city"><br>
+        </label>
+      </p>
+      <p>
+        <label for="yearFrom">Возраст:</label>
+          от<input type="number" id="yearFrom" min="14" max="99"> 
+          до <input type="number" id="yearTo" min="14" max="99"><br>
+      </p>
+      <p>
+        <label for="kolFrom">Количество прослушиваний:</label> 
+        от<input type="number" id="kolFrom" min="0" max="999999999999"> 
+        до <input type="number" id="kolTo" min="0" max="999999999999"><br>
+      </p>
+      <p>
+        <label for="kolmonthFrom">Количество слушателей в месяц:</label> 
+        от<input type="number" id="kolmonthFrom" min="0" max="999999999"> 
+        до <input type="number" id="kolmonthTo" min="0" max="999999999"><br>
+      </p>
+      <p>
+        <input class="btn" type="button" value="Найти" id="find">
+        <input class="btn" type="reset" value="Очистить фильтры" id="clearFilters">
+      </p>
+    </form>
+  </details>
+</p>
+<table id="list"></table>
+</body>
+<script src="main.js"></script>
+  <script src="data.js"></script>
+</html>

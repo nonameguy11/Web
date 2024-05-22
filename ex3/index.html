@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Check Page</title>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<style>
+ table{
+      margin: 20px 5px;
+      border-collapse:collapse;
+    }
+    td, th {
+      padding: 5px 10px;
+      border: thin solid grey;
+    }
+    table thead{
+       background: LightGrey;
+     font-weight: bold;
+     text-align: center;
+    }
+
+</style>
+</head>
+<body>
+
+<h2>Топ браузеров</h2>
+<table id="browserTable">
+  <thead>
+    <tr>
+      <th>Браузеры</th>
+      <th>Доля рынка(%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Google Chrome</td>
+      <td>63.33</td>
+    </tr>
+    <tr>
+      <td>Apple Safari</td>
+      <td>13.13</td>
+    </tr>
+    <tr>
+      <td>Microsoft Edge</td>
+      <td>10.46</td>
+    </tr>
+    <tr>
+      <td>Mozilla Firefox</td>
+      <td>5.96</td>
+    </tr>
+  </tbody>
+</table>
+
+<input type="number" id="inputPercentage" placeholder="Введите минимальный процент">
+<button onclick="checkPage()">Проверить</button>
+
+<script>
+function checkPage() {
+  var inputPercentage = d3.select("#inputPercentage").property("value");
+  d3.selectAll("#browserTable tbody tr")
+    .filter(function() {
+      return parseFloat(d3.select(this).select("td:nth-child(2)").text()) < inputPercentage;
+    })
+    .remove();
+}
+</script>
+
+</body>
+</html>
