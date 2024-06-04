@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Анимация</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <style>
+        svg {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <svg id="svgContainer" width="400" height="400"></svg>
+    <div id="controls">
+        <button id="startBtn">Start Animation</button>
+        <button id="clearBtn">Clear Animation</button>
+        <input type="number" id="durationInput" placeholder="Duration (s)">
+        <input type="number" id="scaleInput" placeholder="Scale (%)">
+        <input type="checkbox" id="rotateInput"> Rotate
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const svg = d3.select("#svgContainer");
+            const width = +svg.attr("width");
+            const height = +svg.attr("height");
+
+            const path = svg.append("path")
+                .attr("d", "M 200 200 C -50 -50, 450 -50, 200 200 C -50 450, 450 450, 200 200")
+                .attr("fill", "none")
+                .attr("stroke", "blue")
+                .attr("stroke-width", 2)
+                .attr("class", "Path");
+
+            const createAngryFace = () => {
+                const group = svg.append("g")
+                    .attr("class", "angryFace");
+
+                // Голова
+                group.append("circle")
+                    .attr("cx", 0)
+                    .attr("cy", 0)
+                    .attr("r", 10)
+                    .attr("fill", "red")
+                    .attr("stroke", "black")
+                    .attr("stroke-width", 2);
+
+                // Левый глаз
+                group.append("line")
+                    .attr("x1", -5)
+                    .attr("y1", -3)
+                    .attr("x2", -3)
+                    .attr("y2", -5)
+                    .attr("stroke", "black")
+                    .attr("stroke-width", 2);
+
+                group.append("line")
+                    .attr("x1", -3)
+                    .attr("y1", -3)
+                    .attr("x2", -5)
+                    .attr("y2", -5)
+                    .attr("stroke", "black")
+                    .attr("stroke-width", 2);
+
+                // Правый глаз
+                group.append("line")
+                    .attr("x1", 3)
+                    .attr("y1", -3)
+                    .attr("x2", 5)
+                    .attr("y2", -5)
+                    .attr("stroke", "black")
+                    .attr("stroke-width", 2);
+
+                group.append("line")
+                    .attr("x1", 5)
+                    .attr("y1", -3)
+                    .attr("x2", 3)
+                    .attr("y2", -5)
+                    .attr("stroke", "black")
+                    .attr("stroke-width", 2);
+
+                // Рот
+                group.append("path")
+                    .attr("d", "M -5 3 Q 0 0, 5 3")
+                    .attr("stroke", "black")
+                    .attr("stroke-width", 2)
+                    .attr("fill", "none");
+
+                return group;
+            };
+
+            const clearAnimation = () => {
+                svg.selectAll(".angryFace").remove();
+            };
+
+            const animateFace = (duration, scalePercent, rotate) => {
+                const totalLength = path.node().getTotalLength();
+                const scaleFactor = scalePercent / 100;
+
+                const movingFace = createAngryFace();
+                movingFace.attr("transform", `translate(${path.node().getPointAtLength(0).x}, ${path.node().getPointAtLength(0).y})`);
+
+                movingFace.transition()
+                    .duration(duration * 1000)
+                    .attrTween("transform", function () {
+                        return function (t) {
+                            const point = path.node().getPointAtLength(t * totalLength);
+                            let transform = `translate(${point.x}, ${point.y})`;
+                            transform += ` scale(${1 + t * scaleFactor})`;
+                            if (rotate) transform += ` rotate(${t * 720}, 0, 0)`;
+                            return transform;
+                        };
+                    });
+            };
+
+            document.getElementById('startBtn').addEventListener('click', () => {
+                const duration = parseFloat(document.getElementById('durationInput').value) || 1;
+                const scalePercent = parseFloat(document.getElementById('scaleInput').value) || 0;
+                const rotate = document.getElementById('rotateInput').checked;
+
+                clearAnimation();
+                animateFace(duration, scalePercent, rotate);
+            });
+
+            document.getElementById('clearBtn').addEventListener('click', clearAnimation);
+
+            const initialSetup = () => {
+                clearAnimation();
+                const initialFace = createAngryFace();
+                const startPoint = path.node().getPointAtLength(0);
+                initialFace.attr("transform", `translate(${startPoint.x}, ${startPoint.y})`);
+            };
+
+            initialSetup();
+        });
+    </script>
+</body>
+</html>

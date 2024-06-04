@@ -66,7 +66,7 @@ let createTable = (data, idTable) => {
             let val = item[key];
             if (isNaN(Number(val))) {
                 val = item[key].toLowerCase()
-                result &&= val.indexOf(datafilter[correspond[key]]) !== -1
+                result &&= val.indexOf(datafilter[correspond[key]]) !== -1 //Ищем подстроку 
             }
             if (!isNaN(Number(val))) {
                 val = Number(val)
